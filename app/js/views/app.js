@@ -10,9 +10,7 @@ define([
      * The main app view for Jiminy
      */
 
-    var Jiminy = Jiminy || {};
-
-    Jiminy.AppView = Backbone.View.extend({
+    var JiminyAppView = Backbone.View.extend({
 
         el: '.jiminy',
 
@@ -28,6 +26,6 @@ define([
 
     });
 
-    return Jiminy;
+    return JiminyAppView;
 
 });

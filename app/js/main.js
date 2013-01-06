@@ -3,10 +3,12 @@ require([
     'jquery',
     'underscore',
     'backbone',
-    'jiminy'
+    'views/app'
 
-], function($, _, Backbone, Jiminy) {
+], function($, _, Backbone, JiminyAppView) {
     
-    new Jiminy.AppView();
+    var Jiminy = Jiminy || {};
+
+    Jiminy.AppView = new JiminyAppView();
 
 });

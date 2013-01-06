@@ -13,7 +13,41 @@
     </head>
     <body>
 
-        <div class="jiminy"></div>
+        <div class=jiminy>
+            <header class=navbar>
+                <h1>Jiminy</h1>
+            </header>
+            <section class=note>
+                <ul class=note--virtue-list>
+                    <li>
+                        <article class=note--virtue>
+                            <h2>Frugality</h2>
+                            <figure class=note--virtue--count>0</figure>
+                            <button class=note--viture--increment> + </button>
+                            <button class=note--viture--decrement> - </button>
+                        </article>
+                    </li>
+                    <li>
+                        <a class=note--new-virtue href="#/new-virtue/"> + New Virtue </a>
+                    </li>
+                </ul>
+            </section>
+            <section class=new-virtue>
+                <input class=new-virtue--input data-new-virtue--input type=text>
+                <ul class=new-virtue--suggestion-list data-new-virtue--suggestion-list>
+                    <li>Frugality</li>
+                </ul>
+            </section>
+            <section class=reflect>
+                <!-- // -->
+            </section>
+            <footer class=ixbar>
+                <ul>
+                    <li><a href="#/note/">Note</a></li>
+                    <li><a href="#/reflect/">Reflect</a></li>
+                </ul>
+            </footer>
+        </div>
 
         <script src="lib/require-min.js" data-main="js/main"></script>
         <script>
