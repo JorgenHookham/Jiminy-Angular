@@ -1,0 +1,82 @@
+////////////////////////
+// Variables & Mixins //
+////////////////////////
+
+@import 'compass/css3/text-shadow';
+
+$dk_grey: rgb(68, 68, 68);
+$md_grey: rgb(97, 97, 97);
+$lt_grey: rgb(158, 158, 158);
+
+
+
+//////////
+// Base //
+//////////
+
+body { padding: 15px; }
+
+
+
+///////////////////
+// Notation View //
+///////////////////
+
+.note {}
+.note--virtue-list          { margin: 0; list-style: none; }
+.note--virtue-list > li     { display: block;
+    &:not(:last-child):after{
+        content: '*';
+        display: block;
+        width: 62.8%; height: 3px;
+        margin: 0 auto;
+
+        border-bottom: 2px dotted $lt_grey;
+
+        font-size: 30px;
+        color: $md_grey;
+        text-align: center;
+        @include text-shadow(-8px 0 0 #FFF, 8px 0 0 #FFF, -4px 0 0 #FFF, 4px 0 0 #FFF); }}
+.note--virtue               { position: relative; text-align: center; }
+.note--virtue--title        { font-size: 24px; }
+.note--virtue--count        { height: 80px; margin: 0; font-size: 80px; line-height: 40px; }
+.note--virtue--increment,
+.note--virtue--decrement    {
+    position: absolute;
+    top: 50%;
+    width: 44px; height: 44px;
+    margin-top: -22px;
+    padding: 0;
+
+    line-height: 44px;
+    text-align: center;
+}
+.note--virtue--increment    { right: 0; }
+.note--virtue--decrement    { left: 0; }
+.note--new-virtue           {
+    display: block;
+    color: $dk_grey;
+    font-size: 44px;
+    font-weight: 600;
+    text-align: center;
+    line-height: 120px;
+}
+.note--new-virtue:hover     { color: $lt_grey; text-decoration: none; }
+
+
+
+/////////////////////
+// New Virtue View //
+/////////////////////
+
+.new-virtue { display: none !important; }
+.new-virtue--input {}
+.new-virtue--suggestion-list {}
+
+
+
+/////////////////////
+// Reflection View //
+/////////////////////
+
+.reflect { display: none !important; }

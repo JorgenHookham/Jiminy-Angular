@@ -8,23 +8,25 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
         <meta name="apple-mobile-web-app-capable" content="yes">
 
-        <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.2.2/css/bootstrap-combined.min.css" rel="stylesheet">
+        <link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.2.2/css/bootstrap-combined.min.css" rel="stylesheet">
         <link rel="stylesheet" href="css/main.css">
     </head>
     <body>
 
         <div class=jiminy>
             <header class=navbar>
-                <h1>Jiminy</h1>
+                <div class=navbar-inner>
+                    <a class=brand href="#">Jiminy</a>
+                </div>
             </header>
             <section class=note>
                 <ul class=note--virtue-list>
                     <li>
                         <article class=note--virtue>
-                            <h2>Frugality</h2>
-                            <figure class=note--virtue--count>0</figure>
-                            <button class=note--viture--increment> + </button>
-                            <button class=note--viture--decrement> - </button>
+                            <h2 class=note--virtue--title>Frugality</h2>
+                            <h3 class=note--virtue--count>0</h3>
+                            <button class="note--virtue--increment btn"> + </button>
+                            <button class="note--virtue--decrement btn"> - </button>
                         </article>
                     </li>
                     <li>
@@ -41,11 +43,13 @@
             <section class=reflect>
                 <!-- // -->
             </section>
-            <footer class=ixbar>
-                <ul>
-                    <li><a href="#/note/">Note</a></li>
-                    <li><a href="#/reflect/">Reflect</a></li>
-                </ul>
+            <footer class="navbar navbar-fixed-bottom">
+                <div class=navbar-inner>
+                    <ul class=nav>
+                        <li class=active><a href="#/note/">Note</a></li>
+                        <li><a href="#/reflect/">Reflect</a></li>
+                    </ul>
+                </div>
             </footer>
         </div>
 
