@@ -5,7 +5,7 @@ define([
     'backbone'
 
 ], function ($, _, Backbone) {
-    
+
     /*
      * The main app view for Jiminy
      */
