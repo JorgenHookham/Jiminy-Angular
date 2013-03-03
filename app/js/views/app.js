@@ -2,9 +2,13 @@ define([
 
     'jquery',
     'underscore',
-    'backbone'
+    'backbone',
 
-], function ($, _, Backbone) {
+    '../collections/reflections',
+    '../collections/suggestions',
+    '../collections/virtues'
+
+], function ($, _, Backbone, ReflectionCollection, SuggestionCollection, VirtueCollection) {
 
     /*
      * The main app view for Jiminy
@@ -17,7 +21,9 @@ define([
         events: {},
 
         initialize: function (settings) {
-            console.log('Jiminy app initialized.');
+            this.reflections = new ReflectionCollection();
+            this.suggestions = new SuggestionCollection();
+            this.virtues = new VirtueCollection();
         },
 
         render: function () {
