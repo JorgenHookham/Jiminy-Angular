@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>JAVASCRIPT UNIT TEST</title>
+        <link rel="stylesheet" href="http://code.jquery.com/qunit/qunit-1.11.0.css">
+        <script src="http://code.jquery.com/qunit/qunit-1.11.0.js"></script>  
+        <script src="../lib/require-min.js"></script>
+    </head>
+    <body>
+        <div id="qunit"></div>
+        <script>
+            (function () {
+
+                QUnit.stop();
+                QUnit.config.autostart = false;
+
+                require.config({
+                    baseUrl: '../',
+                    paths: {
+                        main: 'app/js/main',
+
+                        lib: 'lib',
+
+                        jquery: 'lib/jquery-min',
+                        underscore: 'lib/underscore-min',
+                        backbone: 'lib/backbone-min',
+                    }
+                });
+
+                require(['tests/unit-tests'], QUnit.start());
+
+            }());
+        </script>
+    </body>
+</html>
