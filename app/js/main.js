@@ -1,9 +1,9 @@
 require.config({
     baseUrl: 'js/',
     paths: {
-        'jquery'    : '../lib/jquery-min',
-        'backbone'  : '../lib/backbone-min',
-        'underscore': '../lib/underscore-min'
+        'jquery'    : '../../lib/jquery-min',
+        'backbone'  : '../../lib/backbone-min',
+        'underscore': '../../lib/underscore-min'
     }
 });
 
