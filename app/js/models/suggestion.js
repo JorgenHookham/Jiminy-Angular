@@ -5,7 +5,7 @@ define([
     'backbone'
 
 ], function ($, _, Backbone) {
-    
+
     /*
      * This is what a suggestion looks like from Jiminy's perspective.
      */
