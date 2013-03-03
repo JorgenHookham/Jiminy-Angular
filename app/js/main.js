@@ -4,7 +4,8 @@ require.config({
         'jquery'    : '../../lib/jquery-min',
         'backbone'  : '../../lib/backbone-min',
         'underscore': '../../lib/underscore-min',
-        'text'      : '../../lib/text'
+        'text'      : '../../lib/text',
+        'mediator'  : '../../lib/backbone-mediator'
     }
 });
 
@@ -13,7 +14,8 @@ require([
     'jquery',
     'underscore',
     'backbone',
-    'views/app'
+    'views/app',
+    'mediator'
 
 ], function($, _, Backbone, JiminyAppView) {
 

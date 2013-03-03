@@ -13,7 +13,9 @@ define([
 
     var VirtueView = Backbone.View.extend({
 
-        events: {},
+        events: {
+            'click [data-increment]' : 'add_relection_tally'
+        },
 
         className: 'tally--virtue',
 
@@ -26,6 +28,11 @@ define([
         render: function () {
             _.template(VirtueTemplate, {virtue: this.model});
             return this;
+        },
+
+        add_relection_tally: function (e) {
+            e.preventDefault();
+            Backbone.Mediator.pub('reflection:create-tally', this.model);
         }
 
     });
