@@ -14,7 +14,11 @@ define([
 
     var ReflectionCollection = Backbone.Collection.extend({
 
-        model: ReflectionModel
+        model: ReflectionModel,
+
+        defaults: {
+            'moment': new Date()
+        }
 
     });
 
