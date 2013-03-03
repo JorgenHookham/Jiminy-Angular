@@ -6,7 +6,7 @@ define([
     '../models/reflection'
 
 ], function ($, _, Backbone, ReflectionModel) {
-    
+
     /*
      * Jiminy remembers each of your reflections for you.
      * This is where they're written down.
@@ -14,11 +14,7 @@ define([
 
     var ReflectionCollection = Backbone.Collection.extend({
 
-        model: ReflectionModel,
-
-        defaults: {
-            'moment': new Date()
-        }
+        model: ReflectionModel
 
     });
 
