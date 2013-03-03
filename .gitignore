@@ -2,3 +2,5 @@
 *.sublime-workspace
 .sass-cache/
 .sass-cache/*
+app/css/
+app/css/*
