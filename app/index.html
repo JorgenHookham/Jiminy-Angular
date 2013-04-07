@@ -3,28 +3,32 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>Jiminy App</title>
-        <meta name="description" content="Your personal character companion. Note and reflect on your transgressions of your virtues.">
+        <title>Jiminy</title>
+        <meta name="description" content="Your personal companion. Keep track of moments that you want to reflect on. Jiminy lives in your pocket, helping you keep an eye on your character strengths and virtues.">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
         <meta name="apple-mobile-web-app-capable" content="yes">
 
-        <link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.2.2/css/bootstrap-combined.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="vendors/bootstrap/css/bootstrap.min.css">
         <link rel="stylesheet" href="css/main.css">
+
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.6/angular.min.js"></script>
+        <script>window.angular || document.write('<script src="vendors/angular/angular.min.js">\x3C/script>')</script>
+        <script src="js/TallyCtrl.js"></script>
     </head>
     <body>
 
-        <div class=jiminy>
+        <div ng-app class=jiminy>
             <header class=navbar>
                 <div class=navbar-inner>
                     <a class=brand href="#">Jiminy</a>
                 </div>
             </header>
-            <section class=tally>
+            <section class=tally ng-controller=TallyCtrl>
                 <ul class=tally--virtue-list>
-                    <li>
+                    <li ng-repeat="tally in tallies">
                         <article class=tally--virtue>
-                            <h2 class=tally--virtue--title>Frugality</h2>
-                            <h3 class=tally--virtue--count>0</h3>
+                            <h2 class=tally--virtue--title>{{ tally.name }}</h2>
+                            <h3 class=tally--virtue--count>{{ tally.count }}</h3>
                             <button class="tally--virtue--increment btn"> + </button>
                             <button class="tally--virtue--decrement btn"> - </button>
                         </article>
@@ -52,14 +56,5 @@
                 </div>
             </footer>
         </div>
-
-        <script src="../lib/require-min.js" data-main="js/main"></script>
-
-        <script>
-            var _gaq=[['_setAccount','UA-37377481-1'],['_trackPageview']];
-            (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-            g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
-            s.parentNode.insertBefore(g,s)}(document,'script'));
-        </script>
     </body>
 </html>
