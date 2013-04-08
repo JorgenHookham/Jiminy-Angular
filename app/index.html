@@ -1,60 +1,66 @@
 <!DOCTYPE html>
-<html class="no-js">
+<html ng-app="jiminyApp">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>Jiminy</title>
-        <meta name="description" content="Your personal companion. Keep track of moments that you want to reflect on. Jiminy lives in your pocket, helping you keep an eye on your character strengths and virtues.">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
         <meta name="apple-mobile-web-app-capable" content="yes">
 
-        <link rel="stylesheet" href="vendors/bootstrap/css/bootstrap.min.css">
-        <link rel="stylesheet" href="css/main.css">
+        <title>Jiminy</title>
+        <meta name="description" content="Your personal companion. Keep track of moments that you want to reflect on. Jiminy lives in your pocket, helping you keep an eye on your character strengths and virtues.">
+
+        <link rel="stylesheet" href="css/global.css">
 
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.6/angular.min.js"></script>
         <script>window.angular || document.write('<script src="vendors/angular/angular.min.js">\x3C/script>')</script>
-        <script src="js/TallyCtrl.js"></script>
+
+        <script src="vendors/persistencejs/persistence.js"></script>
+        <script src="vendors/persistencejs/persistence.store.sql.js"></script>
+        <script src="vendors/persistencejs/persistence.store.websql.js"></script>
+
+        <script src="js/app.js"></script>
+        <script src="js/services/storage-service.js"></script>
+        <script src="js/services/reflection-service.js"></script>
+
+        <script src="js/controllers/virtue-list.js"></script>
+        <script src="js/controllers/reflection-list.js"></script>
+
     </head>
     <body>
 
-        <div ng-app class=jiminy>
-            <header class=navbar>
-                <div class=navbar-inner>
-                    <a class=brand href="#">Jiminy</a>
-                </div>
-            </header>
-            <section class=tally ng-controller=TallyCtrl>
-                <ul class=tally--virtue-list>
-                    <li ng-repeat="tally in tallies">
-                        <article class=tally--virtue>
-                            <h2 class=tally--virtue--title>{{ tally.name }}</h2>
-                            <h3 class=tally--virtue--count>{{ tally.count }}</h3>
-                            <button class="tally--virtue--increment btn"> + </button>
-                            <button class="tally--virtue--decrement btn"> - </button>
-                        </article>
-                    </li>
-                    <li>
-                        <a class=tally--new-virtue href="#/new-virtue/"> + New Virtue </a>
-                    </li>
-                </ul>
-            </section>
-            <section class=new-virtue>
-                <input class=new-virtue--input data-new-virtue--input type=text>
-                <ul class=new-virtue--suggestion-list data-new-virtue--suggestion-list>
-                    <li>Frugality</li>
-                </ul>
-            </section>
-            <section class=reflect>
-                <!-- // -->
-            </section>
-            <footer class="navbar navbar-fixed-bottom">
-                <div class=navbar-inner>
-                    <ul class=nav>
-                        <li class=active><a href="#/note/">Note</a></li>
-                        <li><a href="#/reflect/">Reflect</a></li>
-                    </ul>
-                </div>
-            </footer>
-        </div>
+        <section class="virtues {{ state }}" ng-controller=VirtueListCtrl>
+
+            <ul class=virtue-list>
+                <li ng-repeat="virtue in virtues">
+                    {{ virtue.label }}<button class=virtue-list--reflect ng-click="create_reflection(virtue)">Add Reflection</button>
+                    <button class=virtue-list--remove ng-click="remove_virtue(virtue)">Remove</button>
+                </li>
+            </ul>
+
+            <div class=virtue-list--add>
+                <p>What <span class=hide-if-empty>other</span> virtue would you like to keep track of?</p>
+
+                <form ng-submit="add_virtue()">
+                    <input type=text autofocus ng-model="virtue_text">
+                    <input type=submit hidden>
+                </form>
+
+                <button class=hide-if-empty ng-click="save_virtues()">Nothing Else, That's All</button>
+            </div>
+
+            <button class=virtue-list--edit ng-click="edit_virtues()">Add/Remove Virtues</button>
+
+        </section>
+
+        <section class="reflections {{ state }}" ng-controller=ReflectionListCtrl>
+            <ul class=reflection-list>
+                <li ng-repeat="reflection in reflections">
+                    {{ reflection.moment | date:'MMMM d, h:mma' }}:
+                    {{ reflection.virtue }}
+                    <button class=reflection-list--remove ng-click="remove_reflection(reflection)">Remove</button>
+                </li>
+            </ul>
+        </section>
+
     </body>
 </html>
