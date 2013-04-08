@@ -1,0 +1,24 @@
+
+
+////////////////////
+//  BUTTON STYLES //
+////////////////////
+
+
+.btn {
+    border: none;
+    background: $one;
+
+    color: white;
+}
+
+button { @extend .btn; }
+
+// §
+
+
+
+
+
+
+

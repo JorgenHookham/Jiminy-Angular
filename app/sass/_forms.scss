@@ -1,0 +1,25 @@
+
+
+/////////////////
+// FORM STYLES //
+/////////////////
+
+
+input[type=text] {
+    @include transition (.15s border ease-in-out);
+    outline: none; border: 1px solid $lite-grey;
+
+    &:focus {
+        border-color: $one;
+    }
+}
+
+
+// §
+
+
+
+
+
+
+

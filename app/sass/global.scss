@@ -1,0 +1,88 @@
+
+
+////////////////////////////////////////////////
+//     __ _       _            _____          //
+//  __|  |_|_____|_|___ _ _   |  _  |___ ___  //
+// |  |  | |     | |   | | |  |     | . | . | //
+// |_____|_|_|_|_|_|_|_|_  |  |__|__|  _|  _| //
+//                     |___|        |_| |_|   //
+//                                            //
+////////////////////////////////////////////////
+
+
+
+
+////////////////////////
+// Variables & Mixins //
+////////////////////////
+
+@import 'compass/css3/text-shadow';
+@import 'compass/css3/transition';
+@import 'compass/css3/inline-block';
+
+
+// Colours
+
+$dark-grey: rgb(60, 60, 60);
+$mid-grey:  rgb(120, 120, 120);
+$lite-grey: rgb(240, 240, 240);
+
+$one: #B4D455;
+
+
+
+
+/////////////
+// Imports //
+/////////////
+
+@import 'base';
+@import 'layout';
+@import 'typography';
+@import 'forms';
+@import 'buttons';
+@import 'utility';
+
+
+
+
+/////////////////
+// Virtue List //
+/////////////////
+
+.virtue-list { @extend .simple-list; }
+
+.virtue-list--add,
+.virtue-list--remove    { display: none; }
+.virtue-list--edit,
+.virtue-list--reflect   { @include inline-block(); }
+
+
+////////////
+// States //
+////////////
+
+.s-edit-virtues {
+    .virtue-list--add,
+    .virtue-list--remove    { @include inline-block(); }
+    .virtue-list--edit,
+    .virtue-list--reflect   { display: none; }
+}
+
+
+
+
+/////////////////////
+// Reflection List //
+/////////////////////
+
+.reflection-list { @extend .simple-list; }
+
+// §
+
+
+
+
+
+
+

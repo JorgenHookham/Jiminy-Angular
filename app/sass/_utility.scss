@@ -1,0 +1,27 @@
+
+
+////////////////////
+// UTILITY STYLES //
+////////////////////
+
+
+.hidden { display: none; }
+
+.simple-list {
+    padding: 0; list-style: none;
+
+    > li {
+        background: $lite-grey;
+
+        &:nth-child(even) { background: lighten($lite-grey, 4%); }
+    }
+}
+
+// §
+
+
+
+
+
+
+

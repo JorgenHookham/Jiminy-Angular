@@ -1,0 +1,30 @@
+
+
+///////////////////
+// LAYOUT STYLES //
+///////////////////
+
+section { background: #fff; text-align: center; }
+section:after {
+    content: '§';
+    display: block;
+    margin: 1em 0 2em;
+
+    text-align: center;
+    font-size: 3em;
+    color: $lite-grey;
+
+    @include text-shadow(0 -1px 1px darken($lite-grey, 8%));
+}
+
+.l-left { float: left; }
+.l-right { float: right; }
+
+// §
+
+
+
+
+
+
+
